@@ -1,0 +1,30 @@
+from scamlens.url_analyzer import analyze_url, extract_urls, registered_domain
+
+
+def ids(url):
+    return {f.id for f in analyze_url(url)}
+
+
+def test_domain_resmi_tidak_ditandai_merek():
+    assert "URL-09" not in ids("https://www.bca.co.id/id/beranda")
+    assert "URL-09" not in ids("https://bankmandiri.co.id/")
+
+
+def test_typosquatting_merek():
+    assert "URL-09" in ids("http://bca-klaim-hadiah.top/login")
+
+
+def test_ip_shortener_dan_tld():
+    assert "URL-01" in ids("http://192.168.10.5/login")
+    assert "URL-02" in ids("https://bit.ly/abc123")
+    assert "URL-03" in ids("https://promo-lebaran.xyz")
+
+
+def test_registered_domain_id():
+    assert registered_domain("www.bpjs-kesehatan.go.id") == "bpjs-kesehatan.go.id"
+    assert registered_domain("a.b.example.com") == "example.com"
+
+
+def test_ekstraksi_url():
+    urls = extract_urls("Klik https://a.xyz/x, atau www.contoh.id/y.")
+    assert urls == ["https://a.xyz/x", "www.contoh.id/y"]
