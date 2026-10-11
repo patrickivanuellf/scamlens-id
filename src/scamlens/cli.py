@@ -1,161 +1,241 @@
-"""Evaluasi mesin deteksi terhadap dataset berlabel (CSV atau JSONL).
+"""Antarmuka baris perintah ScamLens ID.
 
-Kolom wajib: ``label`` (``scam``/``ham``) dan ``text``. Kolom opsional: ``id``,
-``split`` (``dev``/``test``), ``category``.
+Perintah:
+  scamlens check "teks" | --file pesan.txt | (stdin)   periksa satu pesan/URL
+  scamlens batch pesan.txt|pesan.jsonl                  periksa banyak pesan sekaligus
+  scamlens rules                                        daftar semua aturan
+  scamlens eval data/eval/pesan_uji.csv                 ukur precision/recall pada dataset
+
+Kode keluar: 0 = aman (di bawah ambang), 1 = risiko >= ambang (--fail-on), 2 = kesalahan pemakaian.
 """
 
 from __future__ import annotations
 
-import csv
+import argparse
 import json
-from dataclasses import dataclass, field
-from pathlib import Path
+import os
+import sys
 
-from .scorer import Result, analyze_text
+from . import __version__
+from .evaluate import evaluate, format_report, load_dataset
+from .rules import RULES
+from .scorer import LEVEL_SEDANG, LEVEL_TINGGI, Result, analyze_text
+from .url_analyzer import URL_RULES
 
-LEVEL_RANK = {"rendah": 0, "sedang": 1, "tinggi": 2}
-
-
-@dataclass(frozen=True)
-class Sample:
-    id: str
-    label: str  # "scam" | "ham"
-    text: str
-    category: str = ""
-    split: str = ""
+ICON = {"rendah": "[AMAN?]", "sedang": "[WASPADA]", "tinggi": "[BAHAYA]"}
+COLOR = {"rendah": "32", "sedang": "33", "tinggi": "31"}
+RANK = {"rendah": 0, "sedang": 1, "tinggi": 2}
 
 
-@dataclass
-class Metrics:
-    tp: int = 0
-    fp: int = 0
-    fn: int = 0
-    tn: int = 0
-
-    @property
-    def total(self) -> int:
-        return self.tp + self.fp + self.fn + self.tn
-
-    @property
-    def precision(self) -> float:
-        d = self.tp + self.fp
-        return self.tp / d if d else 0.0
-
-    @property
-    def recall(self) -> float:
-        d = self.tp + self.fn
-        return self.tp / d if d else 0.0
-
-    @property
-    def f1(self) -> float:
-        p, r = self.precision, self.recall
-        return 2 * p * r / (p + r) if (p + r) else 0.0
-
-    @property
-    def accuracy(self) -> float:
-        return (self.tp + self.tn) / self.total if self.total else 0.0
-
-    def to_dict(self) -> dict:
-        return {
-            "tp": self.tp, "fp": self.fp, "fn": self.fn, "tn": self.tn,
-            "precision": round(self.precision, 4), "recall": round(self.recall, 4),
-            "f1": round(self.f1, 4), "accuracy": round(self.accuracy, 4),
-        }
+class CliError(Exception):
+    """Kesalahan pemakaian/IO yang ditampilkan ramah dengan kode keluar 2."""
 
 
-@dataclass
-class Report:
-    positive_level: str
-    metrics: Metrics
-    per_category_recall: dict[str, tuple[int, int]] = field(default_factory=dict)
-    false_positives: list[tuple[Sample, Result]] = field(default_factory=list)
-    false_negatives: list[tuple[Sample, Result]] = field(default_factory=list)
-
-    def to_dict(self) -> dict:
-        return {
-            "positive_level": self.positive_level,
-            "metrics": self.metrics.to_dict(),
-            "per_category_recall": {
-                k: {"terdeteksi": v[0], "total": v[1]}
-                for k, v in sorted(self.per_category_recall.items())
-            },
-            "false_positives": [_err(s, r) for s, r in self.false_positives],
-            "false_negatives": [_err(s, r) for s, r in self.false_negatives],
-        }
+def _paint(text: str, level: str, enabled: bool) -> str:
+    return f"\033[{COLOR[level]}m{text}\033[0m" if enabled else text
 
 
-def _err(s: Sample, r: Result) -> dict:
-    return {"id": s.id, "category": s.category, "score": r.score, "level": r.level,
-            "text": s.text, "rules": [f.id for f in r.findings]}
+def _use_color(args: argparse.Namespace) -> bool:
+    return not getattr(args, "no_color", False) and sys.stdout.isatty() and "NO_COLOR" not in os.environ
 
 
-def load_dataset(path: str | Path) -> list[Sample]:
-    p = Path(path)
-    samples: list[Sample] = []
-    if p.suffix.lower() == ".jsonl":
-        with p.open(encoding="utf-8") as fh:
-            rows = [json.loads(line) for line in fh if line.strip()]
-    else:
-        with p.open(encoding="utf-8", newline="") as fh:
-            rows = list(csv.DictReader(fh))
-    for i, row in enumerate(rows, 1):
-        label = str(row.get("label", "")).strip().lower()
-        text = row.get("text")
-        if label not in {"scam", "ham"} or not text:
-            raise ValueError(f"Baris {i}: butuh label 'scam'/'ham' dan teks tidak kosong.")
-        samples.append(Sample(
-            id=str(row.get("id") or f"R{i:04d}"), label=label, text=text,
-            category=str(row.get("category") or ""), split=str(row.get("split") or ""),
-        ))
-    return samples
+def _bar(score: int, width: int = 20) -> str:
+    filled = round(score / 100 * width)
+    return "[" + "#" * filled + "-" * (width - filled) + "]"
 
 
-def evaluate(samples: list[Sample], positive_level: str = "sedang") -> Report:
-    if positive_level not in ("sedang", "tinggi"):
-        raise ValueError("positive_level harus 'sedang' atau 'tinggi'")
-    threshold = LEVEL_RANK[positive_level]
-    m = Metrics()
-    report = Report(positive_level, m)
-    per_cat: dict[str, list[int]] = {}
-    for s in samples:
-        res = analyze_text(s.text)
-        predicted_scam = LEVEL_RANK[res.level] >= threshold
-        if s.label == "scam":
-            c = per_cat.setdefault(s.category or "-", [0, 0])
-            c[1] += 1
-            if predicted_scam:
-                m.tp += 1
-                c[0] += 1
-            else:
-                m.fn += 1
-                report.false_negatives.append((s, res))
-        else:
-            if predicted_scam:
-                m.fp += 1
-                report.false_positives.append((s, res))
-            else:
-                m.tn += 1
-    report.per_category_recall = {k: (v[0], v[1]) for k, v in per_cat.items()}
-    return report
+def _trips(level: str, fail_on: str) -> bool:
+    return fail_on != "never" and RANK[level] >= RANK[fail_on]
 
 
-def format_report(report: Report, show_errors: bool = False, title: str = "") -> str:
-    m = report.metrics
-    lines = []
-    if title:
-        lines.append(title)
-    lines.append(f"Sampel: {m.total}  (positif = level >= {report.positive_level})")
-    lines.append(f"  TP={m.tp}  FP={m.fp}  FN={m.fn}  TN={m.tn}")
-    lines.append(f"  Precision {m.precision:.1%} | Recall {m.recall:.1%} | "
-                 f"F1 {m.f1:.1%} | Akurasi {m.accuracy:.1%}")
-    lines.append("  Recall per kategori penipuan:")
-    for cat, (hit, tot) in sorted(report.per_category_recall.items()):
-        lines.append(f"    {cat:<18} {hit}/{tot}")
-    if show_errors:
-        lines.append(f"  False positive ({len(report.false_positives)}) - pesan sah yang ditandai:")
-        for s, r in report.false_positives:
-            lines.append(f"    [{s.id}] skor {r.score} {[f.id for f in r.findings]}: {s.text[:90]}")
-        lines.append(f"  False negative ({len(report.false_negatives)}) - penipuan yang lolos:")
-        for s, r in report.false_negatives:
-            lines.append(f"    [{s.id}] skor {r.score} {[f.id for f in r.findings]}: {s.text[:90]}")
+def _read_file(path: str) -> str:
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return fh.read()
+    except FileNotFoundError:
+        raise CliError(f"File tidak ditemukan: {path}") from None
+    except (OSError, UnicodeDecodeError) as exc:
+        raise CliError(f"Tidak bisa membaca {path}: {exc}") from None
+
+
+def format_result(result: Result, color: bool = False, quiet: bool = False) -> str:
+    head = f"{ICON[result.level]} Skor risiko: {result.score}/100 ({result.level}) {_bar(result.score)}"
+    head = _paint(head, result.level, color)
+    if quiet:
+        return head
+    lines = [head]
+    if result.findings:
+        lines.append("Temuan:")
+        for f in result.findings:
+            lines.append(f"  - [{f.id}] {f.explanation}  (+{f.weight})")
+            if f.evidence:
+                lines.append(f"      bukti: {f.evidence!r}")
+    if result.urls:
+        lines.append("Tautan terdeteksi:")
+        lines.extend(f"  - {u}" for u in result.urls)
+    for note in result.notes:
+        lines.append(f"Catatan: {note}")
+    lines.append("")
+    lines.append(result.advice)
     return "\n".join(lines)
+
+
+def _get_text(args: argparse.Namespace) -> str:
+    if args.file:
+        text = _read_file(args.file)
+    elif args.text is not None:
+        text = args.text
+    elif sys.stdin.isatty():
+        raise CliError("Tidak ada input. Contoh: scamlens check \"teks pesan\" atau --file pesan.txt")
+    else:
+        text = sys.stdin.read()
+    if not text.strip():
+        raise CliError("Teks kosong, tidak ada yang bisa diperiksa.")
+    return text
+
+
+def cmd_check(args: argparse.Namespace) -> int:
+    result = analyze_text(_get_text(args))
+    if args.json:
+        print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2))
+    else:
+        print(format_result(result, _use_color(args), args.quiet))
+    return 1 if _trips(result.level, args.fail_on) else 0
+
+
+def _load_batch(path: str) -> list[str]:
+    raw = _read_file(path)
+    messages: list[str] = []
+    for n, line in enumerate(raw.splitlines(), 1):
+        line = line.strip()
+        if not line:
+            continue
+        if path.lower().endswith(".jsonl"):
+            try:
+                text = json.loads(line)["text"]
+            except (ValueError, KeyError, TypeError):
+                raise CliError(f"{path} baris {n}: harus JSON dengan kunci \"text\".") from None
+            messages.append(str(text))
+        else:
+            messages.append(line)
+    if not messages:
+        raise CliError(f"{path} tidak berisi pesan.")
+    return messages
+
+
+def cmd_batch(args: argparse.Namespace) -> int:
+    messages = _load_batch(args.file)
+    results = [analyze_text(m) for m in messages]
+    if args.json:
+        payload = [{"index": i, "text": m, **r.to_dict()} for i, (m, r) in enumerate(zip(messages, results), 1)]
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        color = _use_color(args)
+        for i, (m, r) in enumerate(zip(messages, results), 1):
+            tag = _paint(f"{r.level:<6}", r.level, color)
+            ids = ",".join(f.id for f in r.findings[:3])
+            print(f"{i:>4} | {r.score:>3} | {tag} | {m[:60]!r} | {ids}")
+        counts = {lvl: sum(1 for r in results if r.level == lvl) for lvl in RANK}
+        print(f"\nTotal {len(results)}: tinggi={counts['tinggi']} sedang={counts['sedang']} rendah={counts['rendah']}")
+    return 1 if any(_trips(r.level, args.fail_on) for r in results) else 0
+
+
+def cmd_rules(args: argparse.Namespace) -> int:
+    rows = [{"id": r.id, "kategori": r.category, "bobot": r.weight, "penjelasan": r.explanation,
+             "tipe": "teks"} for r in RULES]
+    rows += [{"id": k, "kategori": "url", "bobot": w, "penjelasan": t, "tipe": "url"}
+             for k, (w, t) in URL_RULES.items()]
+    if args.json:
+        print(json.dumps(rows, ensure_ascii=False, indent=2))
+        return 0
+    print(f"Ambang: sedang >= {LEVEL_SEDANG}, tinggi >= {LEVEL_TINGGI}\n")
+    for r in rows:
+        print(f"{r['id']:<7} {r['bobot']:>3}  {r['kategori']:<24} {r['penjelasan']}")
+    print(f"\nTotal {len(rows)} aturan ({len(RULES)} teks, {len(URL_RULES)} URL).")
+    return 0
+
+
+def cmd_eval(args: argparse.Namespace) -> int:
+    try:
+        samples = load_dataset(args.dataset)
+    except FileNotFoundError:
+        raise CliError(f"Dataset tidak ditemukan: {args.dataset}") from None
+    except ValueError as exc:
+        raise CliError(str(exc)) from None
+    if args.split != "all":
+        samples = [s for s in samples if s.split == args.split]
+    if not samples:
+        raise CliError("Tidak ada sampel setelah penyaringan split.")
+    report = evaluate(samples, args.positive_level)
+    if args.json:
+        print(json.dumps(report.to_dict(), ensure_ascii=False, indent=2))
+    else:
+        print(format_report(report, args.errors, f"Dataset: {args.dataset} (split: {args.split})"))
+    m = report.metrics
+    failed = []
+    if args.min_precision is not None and m.precision < args.min_precision:
+        failed.append(f"precision {m.precision:.1%} < {args.min_precision:.1%}")
+    if args.min_recall is not None and m.recall < args.min_recall:
+        failed.append(f"recall {m.recall:.1%} < {args.min_recall:.1%}")
+    if failed:
+        print("GAGAL ambang: " + "; ".join(failed), file=sys.stderr)
+        return 1
+    return 0
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="scamlens", description="Periksa pesan/tautan penipuan berbahasa Indonesia.")
+    parser.add_argument("--version", action="version", version=f"scamlens {__version__}")
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    def common(p: argparse.ArgumentParser) -> None:
+        p.add_argument("--json", action="store_true", help="keluaran JSON")
+        p.add_argument("--fail-on", choices=["sedang", "tinggi", "never"], default="sedang",
+                       help="level minimum yang membuat kode keluar 1 (default: sedang)")
+        p.add_argument("--no-color", action="store_true", help="matikan warna ANSI")
+
+    check = sub.add_parser("check", help="analisis satu teks atau URL")
+    check.add_argument("text", nargs="?", help="teks atau URL (kosong = baca stdin)")
+    check.add_argument("-f", "--file", help="baca teks dari file")
+    check.add_argument("-q", "--quiet", action="store_true", help="hanya tampilkan baris skor")
+    common(check)
+    check.set_defaults(func=cmd_check)
+
+    batch = sub.add_parser("batch", help="periksa banyak pesan (.txt satu per baris, atau .jsonl)")
+    batch.add_argument("file")
+    common(batch)
+    batch.set_defaults(func=cmd_batch)
+
+    rules = sub.add_parser("rules", help="tampilkan semua aturan dan bobotnya")
+    rules.add_argument("--json", action="store_true")
+    rules.set_defaults(func=cmd_rules)
+
+    ev = sub.add_parser("eval", help="ukur precision/recall pada dataset berlabel (CSV/JSONL)")
+    ev.add_argument("dataset")
+    ev.add_argument("--split", choices=["dev", "test", "blind", "all"], default="all")
+    ev.add_argument("--positive-level", choices=["sedang", "tinggi"], default="sedang",
+                    help="level yang dihitung sebagai 'penipuan' (default: sedang)")
+    ev.add_argument("--errors", action="store_true", help="tampilkan false positive/negative")
+    ev.add_argument("--json", action="store_true")
+    ev.add_argument("--min-precision", type=float, help="gagal (kode 1) bila precision di bawah nilai ini")
+    ev.add_argument("--min-recall", type=float, help="gagal (kode 1) bila recall di bawah nilai ini")
+    ev.set_defaults(func=cmd_eval)
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
+        except (AttributeError, ValueError):
+            pass
+    args = build_parser().parse_args(argv)
+    try:
+        return args.func(args)
+    except CliError as exc:
+        print(f"Kesalahan: {exc}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
