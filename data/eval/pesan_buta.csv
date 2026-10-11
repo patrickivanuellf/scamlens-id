@@ -1,0 +1,61 @@
+id,split,label,category,text
+BS001,blind,scam,apk_kurir,"kak paketnya blm bisa dikirim, alamat kurang lengkap. mohon isi form di sini ya https://lengkapi-alamat.sbs/form"
+BS002,blind,scam,phishing_bank,[Bank] Akun m-banking bapak/ibu ter-limit. mohon login ulang via tautan https://login-mbanking-id.top agar bisa dipakai lagi
+BS003,blind,scam,minta_data,WhatsApp kamu terdeteksi dipakai di perangkat lain. Kirimkan 6 angka yang barusan masuk ke SMS untuk mengamankan akun.
+BS004,blind,scam,biaya_dimuka,"Halo, saya Rizky dari tim pencairan pinjaman. Pengajuan Anda disetujui 15 juta, tapi perlu bayar biaya materai dan asuransi Rp 750 ribu dulu."
+BS005,blind,scam,bos_palsu,"Bos, ini aku. Lagi meeting, tolong belikan voucher Google Play 5 juta dulu ya, nanti dikembalikan. Kirim kodenya ke sini."
+BS006,blind,scam,pinjol_judi,"Dapat bonus saldo Rp 250.000 buat member baru! tinggal daftar & deposit minimal 50rb, WD cepat di https://gacor-bet.top"
+BS007,blind,scam,lowongan_palsu,"KABAR GEMBIRA!! Anda lolos jadi reseller resmi, untung 5 juta/minggu tanpa modal. Chat admin: 0812-1111-2222"
+BS008,blind,scam,tilang_pajak,Pemberitahuan: Pajak kendaraan atas nama Anda belum dibayar. Cek tagihan di bit.ly/cek-pajak-kendaraan
+BS009,blind,scam,apk_undangan,"Mas/Mbak, undangan tasyakuran kami ada di aplikasi ini ya, tolong di-install dulu: https://tasyakuran.digital/undangan-v2.apk"
+BS010,blind,scam,ewallet,"Akun Tokopedia anda ada transaksi mencurigakan Rp 4.900.000. Jika bukan anda, klik batalkan: tokopedla-secure.top/batal"
+BS011,blind,scam,investasi_bodong,"Transfer Rp 100 ribu ke rekening ini, 1 jam kemudian saldo Anda jadi 1 juta. Sudah terbukti! Buruan sebelum kuota habis."
+BS012,blind,scam,impersonasi_polisi,"Maaf mengganggu, saya dari Kepolisian. Rekening Bapak terkait kasus narkoba. Mohon kirim foto KTP dan nomor rekening untuk klarifikasi."
+BS013,blind,scam,thr_bansos,Info PLN: token listrik gratis bulan ini untuk pelanggan 450VA. Daftar dan masukkan ID pelanggan di https://token-gratis-pln.xyz
+BS014,blind,scam,thr_bansos,"Selamat siang, kami dari Dinas Sosial. Bapak masuk daftar penerima bantuan Rp 3.000.000. Isi NIK dan nomor ATM di tautan https://bantuan-pemerintah.cfd"
+BS015,blind,scam,keluarga_palsu,"pak tolong transfer dulu 2jt ke rekening ini, hp saya rusak ini pakai hp teman. nanti saya ganti, mendesak"
+BS016,blind,scam,hadiah_undian,Anda terpilih jadi responden survei berhadiah pulsa 100 ribu. Klik s.id/survei-hadiah untuk mulai.
+BS017,blind,scam,phishing_bank,Mohon segera update aplikasi BRImo Anda ke versi terbaru: https://brimo-update.click/download.apk
+BS018,blind,scam,lowongan_palsu,"Gaji 300 ribu per jam cuma dengan menonton video, tidak perlu pengalaman, chat WA kami sekarang."
+BS019,blind,scam,minta_data,Kartu Kredit Anda terdeteksi digunakan di luar negeri. Hubungi kami dan sebutkan 3 digit CVV di belakang kartu untuk blokir.
+BS020,blind,scam,toko_palsu,"Hai kak, aku admin toko. Pesanan kakak gagal diproses. Mohon transfer ulang ke rekening pribadi aku ya agar barang segera dikirim."
+BS021,blind,scam,hadiah_undian,"Pengumuman pemenang giveaway motor Honda! Nomor kamu terpilih, hubungi 0821-3333-4444 & siapkan biaya pengiriman."
+BS022,blind,scam,thr_bansos,"Dana Bantuan UMKM Rp 5 juta sudah cair, tinggal verifikasi data di web resmi: bantuan-umkm-2026.top"
+BS023,blind,scam,tilang_pajak,Ada tagihan BPJS Anda yang jatuh tempo dan kartu akan non-aktif. Bayar sekarang via https://bpjs-tagihan.sbs
+BS024,blind,scam,investasi_bodong,"Bunga 3% per hari! Investasi emas digital dijamin aman 100%, penarikan kapan saja. Gabung grup Telegram: t.me/emasuntung"
+BS025,blind,scam,lowongan_palsu,"Kak, Anda mendapat kesempatan jadi agen pulsa murah. Modal 100rb bisa untung jutaan perbulan. WA: 0813-5555-6666"
+BS026,blind,scam,ewallet,Instagram: Pelanggaran hak cipta terdeteksi di akun Anda. Ajukan banding dalam 12 jam di https://banding-ig.cyou
+BS027,blind,scam,apk_kurir,"foto kamu yg kemarin ketahuan bocor, lihat dan download aplikasi pengecek di linknya ya https://cek-foto-bocor.top/cek.apk"
+BS028,blind,scam,promo_palsu,"Sdr. Pelanggan, kuota internet Anda hampir habis. Beli paket murah hanya hari ini lewat https://paket-murah-kilat.xyz"
+BS029,blind,scam,phishing_bank,"Nasabah yth, demi keamanan mohon konfirmasi password mobile banking Anda dengan membalas SMS ini."
+BS030,blind,scam,keluarga_palsu,"Halo sayang, ini ayah. Nomor ayah ganti ya. Tolong transferin uang buat bayar rumah sakit nenek, ayah lagi di luar kota."
+BH001,blind,ham,percakapan,"Teman-teman, besok kumpul di rumah Andi jam 7 malam ya, bawa makanan masing-masing."
+BH002,blind,ham,kurir_resmi,"Kak, pesanan kamu sudah dikirim lewat JNE, resinya JP1234567890. Dicek di aplikasi ya."
+BH003,blind,ham,notifikasi_bank,"Kode OTP untuk masuk akun: 771204. Jangan beritahu siapa pun, termasuk karyawan kami."
+BH004,blind,ham,kantor,"Mohon maaf, rapat hari ini diundur jadi jam 15.30 karena ada kunjungan klien."
+BH005,blind,ham,edukasi,"Hati-hati ya, kemarin ada teman yang kena penipuan APK undangan nikah. Jangan sembarang klik link."
+BH006,blind,ham,percakapan,Selamat atas kelulusan kamu! Bangga banget sama kamu. Kapan syukurannya?
+BH007,blind,ham,tagihan,Tagihan internet bulan ini Rp 350.000 sudah terbit. Pembayaran bisa lewat transfer bank atau minimarket.
+BH008,blind,ham,url_aman,"Kuliah umum minggu depan tentang keamanan siber, pendaftaran lewat https://forms.gle/xyz789. Gratis untuk mahasiswa."
+BH009,blind,ham,keluarga_sah,"Ibu, uang bulanan udah aku transfer ke rekening ibu ya. Cek aja."
+BH010,blind,ham,percakapan,"Pak RT mengumumkan kerja bakti hari Minggu jam 6 pagi, mohon hadir ya warga."
+BH011,blind,ham,promo_resmi,"Diskon 50% untuk member baru di semua toko kami, berlaku sampai 31 Oktober. S&K berlaku."
+BH012,blind,ham,tagihan,"Info: pembayaran SPP semester ini dibuka sampai 15 November, lewat virtual account bank yang tertera di portal."
+BH013,blind,ham,kantor,"Halo, saya Dwi dari bagian HRD. Mau konfirmasi jadwal interview Kamis jam 9 ya, mohon balas jika bisa."
+BH014,blind,ham,url_aman,"Barusan lihat artikelnya, menarik banget soal keamanan password: https://www.detik.com/edu/contoh-artikel"
+BH015,blind,ham,kantor,"Tolong kirimkan data absensi bulan lalu ke email saya ya, deadline Jumat."
+BH016,blind,ham,kurir_resmi,"Paket dari Shopee sudah sampai di pos satpam ya Pak, tolong diambil nanti."
+BH017,blind,ham,notifikasi_bank,Pembayaran listrik Anda berhasil. Token: 1234 5678 9012 3456 7890. Terima kasih.
+BH018,blind,ham,edukasi,Waspada penipuan mengatasnamakan bank: pihak bank tidak akan pernah menelepon untuk meminta OTP.
+BH019,blind,ham,percakapan,"Tiket kereta Semarang-Jakarta tanggal 20 sudah aku pesan, kodenya sudah dikirim ke email."
+BH020,blind,ham,kampus,"Dik, jangan lupa bawa KTP ya besok buat daftar ulang di kampus."
+BH021,blind,ham,notif_ecommerce,Pesanan Anda #A223 sedang diproses. Anda dapat membatalkan pesanan di aplikasi sebelum dikirim.
+BH022,blind,ham,edukasi,"Mas, tadi ada telepon dari nomor tak dikenal minta transfer. Aku tutup aja. Kamu hati-hati juga."
+BH023,blind,ham,undangan_teks,Kami mengundang Bapak/Ibu pada rapat pleno desa Sabtu pukul 19.00 di balai desa. Terima kasih.
+BH024,blind,ham,donasi_resmi,Ayo donasi buku untuk perpustakaan desa! Serahkan langsung ke posko di balai desa tiap Sabtu.
+BH025,blind,ham,notifikasi_bank,Saldo e-wallet kamu tinggal Rp 12.000. Top up lewat aplikasi atau minimarket terdekat.
+BH026,blind,ham,url_aman,Berikut tautan materi kuliah hari ini: https://drive.google.com/file/d/1abc/view
+BH027,blind,ham,kantor,"Gaji bulan ini sudah masuk ya, cek rekening. Selamat bekerja!"
+BH028,blind,ham,notifikasi_bank,"Info dari bank: jadwal pemeliharaan sistem Minggu 01.00-04.00, layanan mobile banking tidak tersedia sementara."
+BH029,blind,ham,keluarga_sah,"Mah, aku sudah ganti nomor provider ya biar paket datanya murah, nomor tetap sama kok."
+BH030,blind,ham,promo_resmi,"Giveaway kami! Follow akun resmi kami, repost, dan tag 3 teman. Pemenang diumumkan di story Jumat, hadiah dikirim gratis."
