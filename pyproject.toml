@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scamlens-id"
-version = "0.1.0"
+version = "0.2.0"
 description = "Pendeteksi pesan dan tautan penipuan berbahasa Indonesia (phishing, APK palsu, hadiah/THR palsu)"
 readme = "README.md"
 requires-python = ">=3.10"
