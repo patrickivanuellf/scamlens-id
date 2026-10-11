@@ -1,0 +1,215 @@
+id,split,label,category,text
+S001,dev,scam,apk_kurir,Paket Anda tertahan di gudang. Segera install aplikasi kurir di http://jne-cek.xyz/foto-paket.apk lalu kirim kode OTP.
+S002,dev,scam,apk_kurir,"Halo kak, ada foto paket untuk Anda. Lihat dokumen resi di sini: https://resi-paket-id.top/lihat.apk"
+S003,dev,scam,apk_kurir,KURIR J&T: paket tidak dapat dikirim karena alamat tidak lengkap. Unduh aplikasi konfirmasi alamat https://jnt-konfirmasi.cyou/app.apk
+S004,dev,scam,apk_kurir,Paket anda sudah sampai di kantor pos. Klik http://pos-indonesia-cek.click/track untuk melacak dan install aplikasinya.
+S005,dev,scam,apk_kurir,SiCepat: Resi pengiriman 00123456 gagal diantar. Download aplikasi konfirmasi dan isi data penerima: sicepat-lacak.xyz/aplikasi.apk
+S006,dev,scam,apk_kurir,foto paket kamu ini ya bit.ly/3xYzPaket buka segera
+S007,dev,scam,apk_kurir,Surat tilang elektronik atas kendaraan Anda. Lihat dokumen: https://etilang-polri.top/surat.apk
+S008,test,scam,apk_kurir,Anda memiliki 1 paket COD senilai Rp 450.000 belum dibayar. Instal aplikasi pembayaran di https://kurir-bayar.sbs/cod.apk
+S009,test,scam,apk_kurir,Notifikasi pengiriman: paket tertahan bea cukai. Bayar biaya admin dulu lewat link https://bea-cukai-paket.top/bayar
+S010,test,scam,apk_kurir,Cek foto paketmu sebelum kadaluarsa 24 jam http://paket-foto.icu/lihat
+S011,dev,scam,apk_kurir,Ada kiriman dokumen atas nama Anda. Download aplikasi untuk membukanya: https://dokumen-kurir.monster/doc.apk
+S012,dev,scam,apk_kurir,Mohon konfirmasi penerimaan paket Anda dengan memasang aplikasi resmi kami: kurir-id.buzz/konfirmasi.apk
+S013,dev,scam,apk_undangan,"Assalamualaikum, kami mengundang Anda di acara pernikahan kami. Lihat undangan digital: https://undangan-nikah-digital.xyz/undangan.apk"
+S014,dev,scam,apk_undangan,Undangan pernikahan Rina & Dimas. Silakan buka undangan di sini (install dulu aplikasinya) wa-undangan.top/UNDANGAN.apk
+S015,dev,scam,apk_undangan,"Bapak/Ibu, mohon hadir di acara kami. Undangan ada di file ini: bit.ly/undangan-kami (unduh aplikasi)"
+S016,dev,scam,apk_undangan,Info rapat RT: lihat dokumen undangan di aplikasi ini https://rt-undangan.cfd/rapat.apk
+S017,dev,scam,apk_undangan,Hai! Ini undangan reuni kita. Install aplikasi dulu biar bisa buka: https://reuni-smk.sbs/reuni.apk
+S018,test,scam,apk_undangan,Kami sekeluarga mengundang Bapak/Ibu pada resepsi pernikahan putri kami. Undangan digital: undangan-id.live/buka.apk
+S019,test,scam,apk_undangan,"Selamat siang, ini file surat undangan dinas. Mohon dibuka lewat aplikasi: https://surat-dinas.cyou/Undangan.apk"
+S020,test,scam,apk_undangan,"Foto-foto acara kemarin sudah dikirim, download aplikasi galeri nya di https://galeri-acara.top/galeri.apk"
+S021,dev,scam,phishing_bank,BCA: Akun Anda diblokir sementara karena aktivitas mencurigakan. Verifikasi segera di http://bca-klik-verifikasi.top/login
+S022,dev,scam,phishing_bank,"Yth. nasabah, rekening Anda akan ditutup dalam 24 jam jika tidak melakukan verifikasi data. Klik https://bri-verifikasi.xyz"
+S023,dev,scam,phishing_bank,Pihak Bank Mandiri menginformasikan kartu Anda bermasalah. Mohon masukkan PIN dan kode OTP di tautan berikut: mandiri-secure.click/pin
+S024,dev,scam,phishing_bank,BNI: transaksi mencurigakan terdeteksi. Konfirmasi identitas Anda sekarang juga di bni-konfirmasi.top
+S025,dev,scam,phishing_bank,"Selamat siang, saya petugas customer service BRI. Mohon sebutkan kode OTP yang baru masuk untuk membatalkan transaksi tersebut."
+S026,dev,scam,phishing_bank,Kartu kredit Anda dibekukan. Kirim foto KTP dan selfie untuk membuka blokir: wa.me/6281200000000
+S027,dev,scam,phishing_bank,Perubahan tarif transfer BCA: biaya Rp150.000/transaksi mulai bulan ini. Balas YA untuk tetap dengan tarif lama atau TIDAK untuk setuju.
+S028,test,scam,phishing_bank,INFO: Terdapat kenaikan biaya admin m-banking. Segera migrasi ke skema baru melalui form: https://migrasi-bank.cfd/form
+S029,test,scam,phishing_bank,"Rekening Anda terindikasi dipakai untuk pencucian uang. Hubungi petugas OJK di nomor ini untuk klarifikasi, segera!"
+S030,test,scam,phishing_bank,Kode verifikasi akun Anda salah. Masukkan ulang kata sandi dan PIN ATM di halaman ini: http://klikbca-login.icu
+S031,dev,scam,phishing_bank,Update aplikasi mobile banking Anda sekarang agar tidak terblokir. Download: https://update-mbanking.sbs/bank.apk
+S032,dev,scam,phishing_bank,"Pembaruan data nasabah wajib dilakukan hari ini juga, jika tidak kartu ATM diblokir. Isi data di bit.ly/data-nasabah"
+S033,dev,scam,ewallet,DANA: akun Anda ditangguhkan. Verifikasi dengan memasukkan kode OTP di https://dana-verif.xyz
+S034,dev,scam,ewallet,Saldo GoPay Anda berhasil diklaim Rp 500.000. Login di gopay-bonus.top untuk mencairkan.
+S035,dev,scam,ewallet,ShopeePay: Selamat Anda terpilih mendapatkan cashback Rp 1.000.000. Klik shopee-cashback.xyz sekarang juga
+S036,dev,scam,ewallet,"OVO: akun Anda bermasalah, kirimkan kode OTP kepada admin agar akun tidak ditutup."
+S037,dev,scam,ewallet,"Tokopedia: pesanan Anda dibatalkan, refund akan diproses jika Anda login di https://tokopedia-refund.click"
+S038,test,scam,ewallet,"Kami dari admin Shopee, akun Anda terkena pembekuan. Segera konfirmasi password ke nomor ini."
+S039,test,scam,hadiah_undian,Selamat! Anda terpilih sebagai pemenang undian Rp 50.000.000. Hubungi panitia di 0812-0000-0000 untuk klaim.
+S040,test,scam,hadiah_undian,SELAMAT ANDA MENANG mobil dari program undian nasional. Transfer biaya administrasi Rp 2.500.000 terlebih dahulu untuk mencairkan hadiah.
+S041,dev,scam,hadiah_undian,Hadiah Anda sudah menunggu! Klaim iPhone gratis di https://hadiah-iphone.top sebelum batas waktu.
+S042,dev,scam,hadiah_undian,Pemenang undian poin: Anda memenangkan Rp 25 juta. Isi data di bit.ly/poin-hadiah dalam 1 jam.
+S043,dev,scam,hadiah_undian,"Anda mendapat hadiah dari Bank Indonesia. Untuk pencairan, transfer pajak hadiah dulu ya."
+S044,dev,scam,hadiah_undian,Kamu beruntung terpilih! Dapatkan saldo e-wallet gratis Rp 300.000 klik http://saldo-gratis.cyou
+S045,dev,scam,hadiah_undian,"UNDIAN BERHADIAH: nomor Anda menang Rp 100 juta. Kirim nama, alamat, dan foto KTP untuk klaim hadiah."
+S046,dev,scam,hadiah_undian,Selamat anda menang giveaway! Install aplikasi ini lalu masukkan kode klaim: https://giveaway-menang.live/klaim.apk
+S047,dev,scam,hadiah_undian,Hore! Anda menang lotere internasional. Untuk klaim hubungi agen kami dan bayar biaya admin dulu.
+S048,test,scam,hadiah_undian,"Pengumuman: Anda terpilih menerima hadiah ulang tahun senilai Rp 5.000.000, klik indomaret-hadiah.top"
+S049,test,scam,thr_bansos,Pencairan THR dan bansos tahap 2 sudah dibuka. Cek nama Anda dan daftar di https://bansos-cair.top/daftar
+S050,test,scam,thr_bansos,Bantuan sosial Rp 2.000.000 untuk Anda. Isi data dan upload KTP di bit.ly/bansos-id sebelum ditutup.
+S051,dev,scam,thr_bansos,"Dana subsidi listrik cair, klik link untuk mencairkan: https://subsidi-pln.xyz"
+S052,dev,scam,thr_bansos,PROGRAM BANTUAN: Anda terdaftar menerima pencairan dana pemerintah. Konfirmasi lewat WhatsApp ke 0813-0000-0000.
+S053,dev,scam,thr_bansos,"THR dari perusahaan Anda sudah bisa diklaim, buka https://thr-karyawan.click dan masukkan data rekening."
+S054,dev,scam,thr_bansos,"Pendaftaran bansos online resmi, biaya administrasi Rp 150.000 transfer dulu agar nama Anda masuk daftar."
+S055,dev,scam,pinjol_judi,Pinjaman cepat cair 10 juta tanpa jaminan! Transfer biaya admin Rp 500.000 terlebih dahulu untuk pencairan.
+S056,dev,scam,pinjol_judi,"Pinjol langsung cair tanpa survei, download aplikasi: https://pinjam-kilat.sbs/pinjam.apk"
+S057,dev,scam,pinjol_judi,"Dana pinjaman Anda sudah disetujui. Untuk mencairkan, transfer dulu biaya asuransi Rp 1.000.000."
+S058,test,scam,pinjol_judi,"Butuh dana cepat? pinjaman cair 5 menit tanpa BI checking, hubungi WA admin 0857-0000-0000 sekarang."
+S059,test,scam,pinjol_judi,Slot gacor hari ini maxwin! Daftar di https://slot-maxwin88.top dan dapat bonus deposit 100%.
+S060,test,scam,pinjol_judi,"Togel online resmi, modal 10 ribu menang jutaan. Gabung grup Telegram kami t.me/togelku"
+S061,dev,scam,lowongan_palsu,"Dibutuhkan part time online, kerja dari rumah, gaji Rp 500.000 - 1.500.000 per hari. Hubungi WhatsApp 0812-0000-0000."
+S062,dev,scam,lowongan_palsu,"Lowongan freelance like & subscribe, komisi Rp 50.000 per tugas, tanpa pengalaman. Chat Telegram admin sekarang."
+S063,dev,scam,lowongan_palsu,Selamat! Anda lolos seleksi kerja online di perusahaan kami. Gaji 8 juta/bulan. Syarat: transfer deposit Rp 300.000 dulu.
+S064,dev,scam,lowongan_palsu,"Info loker admin online dibayar harian, daftar lewat wa.me/6281200000000. Modal HP saja."
+S065,dev,scam,lowongan_palsu,"Kami butuh 20 orang untuk bekerja online menilai produk, komisi 10 juta per bulan. Klik https://kerja-online.cfd/daftar"
+S066,dev,scam,lowongan_palsu,"HRD PT Maju Global: Anda diterima kerja. Mohon kirim foto KTP, selfie dan nomor rekening untuk administrasi gaji."
+S067,dev,scam,lowongan_palsu,"Pekerjaan mudah klik iklan dapat uang, penghasilan 700 ribu per hari. Daftar sekarang juga ya!"
+S068,test,scam,lowongan_palsu,"Rekrutmen freelance toko online, gaji 3 juta per minggu. Hubungi admin di Telegram @rekrut_toko."
+S069,test,scam,investasi_bodong,"Investasi crypto profit pasti 10% per hari, modal kecil, dijamin aman. Gabung grup VIP kami."
+S070,test,scam,investasi_bodong,"Trading forex dengan robot AI, keuntungan 200% per bulan dijamin! Daftar: https://robot-trading.top"
+S071,dev,scam,investasi_bodong,"Cuan harian 5% dari investasi emas digital, tarik kapan saja. Chat WA 0813-0000-0000 untuk join."
+S072,dev,scam,investasi_bodong,"Kesempatan terakhir investasi saham pre-IPO, dijamin untung besar. Transfer ke rekening kami hari ini juga."
+S073,dev,scam,investasi_bodong,"Member baru dapat bonus saldo, deposit Rp 100.000 profit Rp 1.000.000 dalam 3 hari. Daftar di bit.ly/profit-cepat"
+S074,dev,scam,investasi_bodong,"Ikut arisan online, bunga 20% per minggu tanpa risiko, tutup besok. Transfer ke rekening admin."
+S075,dev,scam,investasi_bodong,"Platform investasi resmi OJK, imbal hasil pasti 3% per hari. Daftar link: https://invest-pasti.xyz"
+S076,dev,scam,investasi_bodong,"Dapatkan penghasilan pasif Rp 3 juta per hari dengan bot trading. Gratis daftar, modal awal Rp 200 ribu."
+S077,dev,scam,keluarga_palsu,"Halo Ma, ini nomor baru aku. HP lama rusak. Tolong transfer dulu Rp 1.500.000 ya, nanti aku ganti."
+S078,test,scam,keluarga_palsu,"Pa, aku ganti nomor. Bisa tolong isi pulsa dan transfer ke rekening temanku? urgent banget."
+S079,test,scam,keluarga_palsu,"Mah ini nomorku yang baru, nomor lama hilang. Tolong bayarin tagihan dulu ya, segera."
+S080,test,scam,keluarga_palsu,"Halo bun, ini Dika. Nomor WA lama diblokir, simpan nomor ini ya. Tolong transfer buat bayar kuliah sekarang."
+S081,dev,scam,keluarga_palsu,"Tante, ini aku Rani, hp ku rusak jadi pakai nomor teman. Bisa pinjam uang 2 juta, transfer ke rekening ini ya?"
+S082,dev,scam,keluarga_palsu,"Selamat sore Pak, saya anak Bapak. Saya kecelakaan dan butuh biaya rumah sakit segera, tolong transfer sekarang."
+S083,dev,scam,tilang_pajak,"E-tilang: kendaraan Anda melanggar lalu lintas, denda Rp 250.000. Bayar via https://etilang-bayar.xyz sebelum 24 jam."
+S084,dev,scam,tilang_pajak,Tunggakan pajak kendaraan Anda akan dikenai denda. Segera bayar di https://pajak-kendaraan.top
+S085,dev,scam,tilang_pajak,Pemberitahuan dari kepolisian: Anda dipanggil sebagai saksi. Unduh surat panggilan: bit.ly/surat-panggilan
+S086,dev,scam,tilang_pajak,DJP: ada kelebihan bayar pajak Anda. Isi data rekening dan KTP di https://pajak-refund.click untuk pengembalian.
+S087,dev,scam,tilang_pajak,"Pembayaran BPJS Anda menunggak, kartu akan dibekukan. Bayar dalam 1 jam di bpjs-bayar.xyz"
+S088,test,scam,minta_data,"Untuk verifikasi akun, kirim foto KTP, selfie memegang KTP, dan nomor kartu ATM beserta PIN."
+S089,test,scam,minta_data,Pembaruan KYC wajib: unggah foto KTP dan swafoto di https://kyc-update.sbs hari ini.
+S090,test,scam,minta_data,Mohon kirim kode verifikasi 6 digit yang masuk ke HP Anda untuk memverifikasi pengiriman.
+S091,dev,scam,minta_data,"Tolong sebutkan nomor rekening, PIN dan password Anda untuk proses pencairan dana."
+S092,dev,scam,minta_data,Admin grup: verifikasi akun WhatsApp Anda dengan mengirim kode 6 digit yang baru dikirim ke nomor ini.
+S093,dev,scam,obfuscated,S3L4M4T anda m3nang h4diah 50jt! kl1k b1t.ly/h4diah-1d dan k1r1m 0TP segera
+S094,dev,scam,obfuscated,Kirim O T P Anda sekarang juga agar akun tidak diblokir.
+S095,dev,scam,obfuscated,Anda M.E.N.A.N.G undian! Segera klaim hadiah di https://klaim-undian.top
+S096,dev,scam,obfuscated,Ｓｅｌａｍａｔ Ａｎｄａ ｍｅｎａｎｇ ｈａｄｉａｈ! Klik https://hadiah-resmi.xyz
+S097,dev,scam,obfuscated,"pak, instal apk undangannya ya: http://192.168.1.77/undangan.apk"
+S098,test,scam,obfuscated,Rekening Anda dibekukan. Buka tautan ini: bca-verif.top/login segera
+S099,test,scam,obfuscated,"Selamat kamu menang! hubungi WA 0812 0000 0000 klaim hadiahnya, pajak hadiah ditransfer dulu ya"
+S100,test,scam,obfuscated,"j@ngan lewatkan! sl0t g4cor maxw1n hari ini, daftar sekarang"
+S101,dev,scam,link_saja,Cek ini bit.ly/3AbCdEf
+S102,dev,scam,link_saja,lihat foto kamu di sini https://foto-kamu.top/lihat
+S103,dev,scam,link_saja,Klik untuk melihat: http://45.67.89.10/login
+S104,dev,scam,link_saja,"Anda mendapat pesan baru, buka https://pesan-baru.cfd"
+S105,dev,scam,link_saja,https://cutt.ly/promo-gratis
+S106,dev,scam,link_saja,Download di sini s.id/aplikasi-baru
+S107,dev,scam,lain_lain,Akun WhatsApp Anda akan dinonaktifkan. Konfirmasi nomor dengan kode OTP agar tetap aktif.
+S108,test,scam,lain_lain,"Kami dari tim operator seluler, kuota Anda akan dibekukan. Hubungi nomor ini dan sebutkan kode verifikasi."
+S109,test,scam,lain_lain,"Sedekah subuh! Donasi untuk korban banjir, transfer ke rekening pribadi 1234567890 an. Ahmad segera."
+S110,test,scam,lain_lain,"Bantu anak yatim sakit, donasi lewat transfer rekening berikut. Cepat sebelum terlambat."
+S111,dev,scam,lain_lain,PLN: tagihan listrik Anda menunggak. Listrik akan diputus hari ini jika tidak bayar di https://pln-bayar.top
+S112,dev,scam,lain_lain,"Verifikasi akun Instagram Anda agar tidak dihapus, klik https://ig-verifikasi.click dan login."
+S113,dev,scam,lain_lain,Telegram: akun Anda dilaporkan melanggar. Banding di https://banding-akun.cyou dalam 24 jam.
+S114,dev,scam,lain_lain,"Dapatkan voucher belanja Rp 500.000 gratis, isi survei singkat di https://survei-voucher.xyz"
+H001,dev,ham,percakapan,"Besok rapat jam 10 di kantor ya, jangan lupa bawa laptop."
+H002,dev,ham,percakapan,Nanti malam jadi makan di rumah Nenek? Aku bawa kue dari toko.
+H003,dev,ham,percakapan,"Makasih ya sudah bantu kemarin, nanti aku traktir kopi."
+H004,dev,ham,percakapan,"Bro, jadwal futsal Jumat jam 7 malam di lapangan biasa."
+H005,dev,ham,percakapan,Tugas kelompok sudah aku kirim ke email dosen. Cek lagi kalau ada yang kurang.
+H006,dev,ham,percakapan,Selamat ulang tahun ya! Semoga sehat dan sukses selalu.
+H007,dev,ham,percakapan,"Aku sudah sampai di stasiun, kamu di mana?"
+H008,test,ham,percakapan,"Bu, anak-anak sudah makan. Nanti aku jemput jam 4 sore."
+H009,test,ham,percakapan,Tolong kirimkan laporan bulanan sebelum jam 3 sore ya.
+H010,test,ham,percakapan,Gimana kabar kuliahmu? Kapan ujian akhirnya?
+H011,dev,ham,percakapan,"Pesanan kopi 2 es latte ya, kurangi gula."
+H012,dev,ham,percakapan,Liburan akhir tahun jadi ke Yogyakarta? Aku sudah cek tiket kereta.
+H013,dev,ham,percakapan,"Doakan ya, besok aku wawancara kerja di Semarang."
+H014,dev,ham,percakapan,"Meeting dipindah ke Kamis jam 2 siang, ruang rapat lantai 3."
+H015,dev,ham,percakapan,Jangan lupa bayar iuran kas kelas Rp 20.000 ke bendahara ya.
+H016,dev,ham,percakapan,"Barusan hujan deras, hati-hati di jalan ya."
+H017,dev,ham,percakapan,Fotonya bagus banget! Kirim yang resolusi tinggi dong.
+H018,test,ham,percakapan,"Paketnya sudah aku terima, terima kasih ya."
+H019,test,ham,percakapan,Ayah minta tolong belikan gas elpiji di warung depan ya.
+H020,test,ham,percakapan,"Aku ganti nomor HP ya, nomor lama sudah tidak dipakai. Simpan nomor ini."
+H021,dev,ham,notifikasi_bank,Kode OTP Anda 482913. Jangan berikan kode ini kepada siapa pun termasuk pihak bank.
+H022,dev,ham,notifikasi_bank,"Transaksi sebesar Rp 150.000 berhasil. Jika bukan Anda, hubungi call center resmi di bagian belakang kartu."
+H023,dev,ham,notifikasi_bank,"Waspada penipuan! Pihak bank tidak pernah meminta PIN, OTP, atau kata sandi Anda."
+H024,dev,ham,notifikasi_bank,Pembayaran tagihan listrik Rp 245.000 berhasil. Terima kasih telah bertransaksi.
+H025,dev,ham,notifikasi_bank,"Demi keamanan, jangan pernah memberikan kode OTP atau PIN kepada siapa pun, termasuk petugas bank."
+H026,dev,ham,notifikasi_bank,Kode verifikasi Tokopedia Anda: 305811. Berlaku 5 menit. Jangan bagikan ke siapa pun.
+H027,dev,ham,notifikasi_bank,Saldo Anda saat ini Rp 1.250.000. Terima kasih.
+H028,test,ham,notifikasi_bank,Top up Rp 100.000 berhasil. Cek riwayat transaksi di aplikasi.
+H029,test,ham,notifikasi_bank,Tagihan kartu kredit Anda jatuh tempo tanggal 25. Bayar lewat aplikasi resmi atau ATM.
+H030,test,ham,notifikasi_bank,Kami mengingatkan nasabah untuk tidak mengklik tautan dari pengirim tak dikenal. Informasi resmi hanya di https://www.bca.co.id
+H031,dev,ham,kurir_resmi,JNE: Paket Anda dengan resi 12345 sedang dalam perjalanan. Lacak di https://www.jne.co.id
+H032,dev,ham,kurir_resmi,"Paket kamu sudah di lokasi pengambilan, tunjukkan kode 8841 ke kurir. Terima kasih sudah berbelanja."
+H033,dev,ham,kurir_resmi,SiCepat: kurir akan mengantar paket Anda hari ini antara jam 13.00-17.00.
+H034,dev,ham,kurir_resmi,Pesanan kamu sedang dikemas oleh penjual. Estimasi tiba 2-3 hari kerja.
+H035,dev,ham,kurir_resmi,Paket Anda telah diterima oleh Budi (satpam). Terima kasih.
+H036,dev,ham,kurir_resmi,Shopee: Pesanan #1234 telah sampai. Jangan lupa beri penilaian di aplikasi.
+H037,dev,ham,kurir_resmi,"Kurir sudah di depan rumah ya Kak, paketnya mohon diterima."
+H038,test,ham,kurir_resmi,"Resi pengiriman JNE 0099887766 berhasil dibuat, lacak di https://www.jne.co.id/id/tracking/trace"
+H039,test,ham,promo_resmi,Promo Ramadan: diskon 20% semua menu hanya di outlet kami sampai akhir bulan.
+H040,test,ham,promo_resmi,Flash sale mulai jam 12 siang. Cek di https://www.tokopedia.com
+H041,dev,ham,promo_resmi,"Diskon akhir tahun di toko buku kami, beli 2 gratis 1 sampai 31 Desember."
+H042,dev,ham,promo_resmi,Voucher makan siang Rp 20.000 berlaku untuk pembelian minimal Rp 60.000 di aplikasi.
+H043,dev,ham,promo_resmi,Hadiah ulang tahun untuk member kami: potongan 10% di semua gerai bulan ini.
+H044,dev,ham,promo_resmi,"Undian berhadiah di toko kami diumumkan Sabtu di Instagram resmi, syarat dan ketentuan berlaku."
+H045,dev,ham,promo_resmi,Beli paket data 10GB hanya Rp 50.000 lewat aplikasi operator Anda.
+H046,dev,ham,promo_resmi,"Sale 11.11 dimulai besok, siapkan keranjang belanja Anda di aplikasi."
+H047,dev,ham,edukasi,Hati-hati modus penipuan APK berkedok undangan pernikahan atau foto paket. Jangan pernah install aplikasi dari link WhatsApp.
+H048,test,ham,edukasi,Ingat: jangan klik tautan mencurigakan dan jangan kirim OTP kepada siapa pun.
+H049,test,ham,edukasi,Edukasi: penipuan mengatasnamakan petugas bank sering meminta kode OTP. Jangan pernah berikan.
+H050,test,ham,edukasi,Kampanye literasi digital: waspadai pesan hadiah dan undian palsu yang meminta transfer biaya admin.
+H051,dev,ham,edukasi,Tips aman: jangan transfer uang sebelum memverifikasi permintaan keluarga yang mengaku ganti nomor.
+H052,dev,ham,edukasi,Pengumuman kampus: mahasiswa diimbau tidak memberikan data pribadi kepada pihak yang mengaku petugas beasiswa.
+H053,dev,ham,edukasi,Laporkan penipuan online ke aduankonten.id atau kanal resmi OJK agar bisa ditindaklanjuti.
+H054,dev,ham,edukasi,"Selalu periksa domain resmi sebelum login. Kalau ragu, ketik alamat situs bank langsung di browser."
+H055,dev,ham,kantor_sekolah,Mohon konfirmasi kehadiran rapat orang tua murid sebelum Jumat.
+H056,dev,ham,kantor_sekolah,Berikut jadwal ujian semester ganjil. Harap dicek dan hubungi wali kelas jika ada kendala.
+H057,dev,ham,kantor_sekolah,"Pak Budi, slip gaji bulan ini sudah dikirim ke email kantor Anda."
+H058,test,ham,kantor_sekolah,Reminder: batas pengumpulan tugas hari ini jam 23.59 di LMS kampus.
+H059,test,ham,kantor_sekolah,Undangan rapat evaluasi proyek Kamis 14.00 via Zoom. Link ada di kalender kantor.
+H060,test,ham,kantor_sekolah,Mohon segera isi timesheet mingguan sebelum Jumat sore ya.
+H061,dev,ham,kantor_sekolah,Pendaftaran beasiswa dibuka sampai 30 November. Info lengkap di situs resmi kampus https://www.upgris.ac.id
+H062,dev,ham,kantor_sekolah,Lowongan magang di perusahaan kami dibuka. Kirim CV ke email hrd@perusahaan.co.id sebelum akhir bulan.
+H063,dev,ham,keluarga_sah,"Ma, aku transfer uang kuliah ke rekening kampus ya, sudah dikonfirmasi bagian keuangan."
+H064,dev,ham,keluarga_sah,"Dek, kakak transfer Rp 500.000 buat bayar kos. Cek mutasi ya."
+H065,dev,ham,keluarga_sah,"Pa, tolong transfer ke rekening Om Budi buat arisan keluarga, nomornya sudah aku kirim lewat telepon tadi."
+H066,dev,ham,keluarga_sah,"Aku lagi di jalan, nanti kabari ya kalau sudah sampai rumah Nenek."
+H067,dev,ham,tagihan_resmi,Pajak kendaraan Anda jatuh tempo bulan depan. Bayar lewat Samsat atau aplikasi resmi.
+H068,test,ham,tagihan_resmi,"Pengumuman: pembayaran PBB dapat dilakukan di kantor pos, bank, atau https://pajak.go.id."
+H069,test,ham,tagihan_resmi,"Tagihan listrik bulan ini Rp 320.000, bayar sebelum tanggal 20 melalui aplikasi resmi."
+H070,test,ham,tagihan_resmi,BPJS Kesehatan: iuran bulan ini sudah diterima. Terima kasih.
+H071,dev,ham,donasi_resmi,"Mari berdonasi untuk korban banjir lewat kitabisa.com, laporan penggunaan dana dipublikasikan secara terbuka."
+H072,dev,ham,donasi_resmi,"Panitia masjid membuka infaq renovasi; transfer resmi atas nama DKM, bukti bisa diminta ke bendahara."
+H073,dev,ham,donasi_resmi,"Terima kasih atas donasinya, laporan dana terbuka di website kami."
+H074,dev,ham,undangan_teks,"Kami mengundang Bapak/Ibu di acara pernikahan kami, Sabtu 14 November di Gedung Serba Guna pukul 10.00. Mohon doa restu."
+H075,dev,ham,undangan_teks,"Undangan syukuran rumah baru, Minggu jam 4 sore di rumah kami. Ditunggu kehadirannya ya."
+H076,dev,ham,undangan_teks,"Reuni angkatan 2010 Sabtu depan di kafe dekat alun-alun, konfirmasi ke Dewi ya."
+H077,dev,ham,notif_ecommerce,Pembayaran Anda sebesar Rp 250.000 untuk pesanan #INV-8821 telah diterima.
+H078,test,ham,notif_ecommerce,Pesanan kamu dibatalkan penjual karena stok habis. Dana akan dikembalikan ke saldo dalam 1x24 jam.
+H079,test,ham,notif_ecommerce,Terima kasih telah berbelanja. Beri ulasan produk untuk mendapatkan poin loyalitas.
+H080,test,ham,notif_ecommerce,Verifikasi email Anda dengan klik tombol di email dari noreply@tokopedia.com
+H081,dev,ham,url_aman,"Artikelnya bagus, baca di https://www.kompas.com/tren/read/2026/10/10/contoh"
+H082,dev,ham,url_aman,Repo proyeknya ada di https://github.com/contoh/proyek-latihan ya.
+H083,dev,ham,url_aman,Tutorial Python-nya di https://docs.python.org/3/tutorial/ .
+H084,dev,ham,url_aman,Jadwal kereta lihat di https://www.kai.id
+H085,dev,ham,url_aman,Info PPDB sekolah: https://ppdb.jatengprov.go.id/pengumuman
+H086,dev,ham,url_aman,Link Zoom rapat: https://zoom.us/j/123456789
+H087,dev,ham,url_aman,Cek cuaca besok di https://www.bmkg.go.id
+H088,test,ham,url_aman,Pendaftaran seminar: https://forms.gle/abcd1234 sampai Jumat
+H089,test,ham,lain_lain,"Hasil pertandingan semalam seru banget, gol di menit akhir!"
+H090,test,ham,lain_lain,"Resep nasi goreng: bawang putih, kecap, telur, dan nasi dingin."
+H091,dev,ham,lain_lain,"Aku sedang belajar mengelola server Linux, ada rekomendasi buku?"
+H092,dev,ham,lain_lain,Peringatan cuaca: hujan lebat disertai petir di wilayah Semarang sore ini.
+H093,dev,ham,lain_lain,Pemadaman listrik terjadwal hari Minggu 09.00-13.00 di wilayah Anda. Mohon maaf atas ketidaknyamanannya.
+H094,dev,ham,lain_lain,Pengumuman: perpustakaan tutup lebih awal hari Jumat karena perbaikan AC.
+H095,dev,ham,lain_lain,Anda berhasil mendaftar kelas online. Jadwal kelas pertama Senin jam 19.00.
+H096,dev,ham,lain_lain,Kami dari tim support. Tiket #4412 Anda sudah diselesaikan. Balas pesan ini jika masih ada kendala.
+H097,dev,ham,lain_lain,"Hai, saya Ana dari HRD. Interview kamu dijadwalkan Rabu jam 10.00 di kantor kami, bawa CV dan ijazah asli."
+H098,test,ham,lain_lain,"Terima kasih telah menghubungi layanan pelanggan. Untuk keamanan akun, kami tidak pernah meminta kata sandi Anda."
+H099,test,ham,lain_lain,Status pengajuan KPR Anda sedang diproses. Tim kami akan menghubungi dalam 3 hari kerja.
+H100,test,ham,lain_lain,"Reminder minum obat jam 8 malam ya, Pak."
