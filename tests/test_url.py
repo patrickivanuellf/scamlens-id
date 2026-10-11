@@ -28,3 +28,36 @@ def test_registered_domain_id():
 def test_ekstraksi_url():
     urls = extract_urls("Klik https://a.xyz/x, atau www.contoh.id/y.")
     assert urls == ["https://a.xyz/x", "www.contoh.id/y"]
+
+
+def test_domain_tanpa_skema_terdeteksi():
+    urls = extract_urls("Cek bit.ly/3AbCdEf dan bca-verif.top/login ya")
+    assert urls == ["bit.ly/3AbCdEf", "bca-verif.top/login"]
+
+
+def test_email_bukan_url():
+    assert extract_urls("Kirim CV ke hrd@perusahaan.co.id sebelum Jumat") == []
+
+
+def test_shortener_dengan_leetspeak():
+    assert "URL-02" in ids("https://b1t.ly/abc")
+
+
+def test_merek_dengan_imbuhan_dan_salah_ketik():
+    assert "URL-09" in ids("http://klikbca-login.icu")
+    assert "URL-10" in ids("https://tokopedla-secure.top/batal")
+
+
+def test_domain_pemerintah_dipercaya():
+    assert ids("https://ppdb.jatengprov.go.id/pengumuman") == set()
+
+
+def test_kata_pancingan_dan_hosting_gratis():
+    assert "URL-12" in ids("https://klaim-hadiah.xyz")
+    assert "URL-13" in ids("https://promo.github.io/login")
+
+
+def test_http_hanya_ditandai_bila_skema_eksplisit():
+    assert "URL-06" in ids("http://contoh-aman.com/a")
+    assert "URL-06" not in ids("contoh-aman.com/a")
+    assert "URL-06" not in ids("https://contoh-aman.com/a")
